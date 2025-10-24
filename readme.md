@@ -4,3 +4,7 @@
 
     Compartimos una muestra de cómo son las pruebas, se busca un feedback y su
 opinión respecto a los avances o desmejoras que noten
+
+## Video de demostración
+
+![Demo](./screenshots/Demo-Teachers-Tournament.gif)

@@ -1,0 +1,10 @@
+Label
+Node3D
+Area3D
+CharacterBody3D
+MeshInstance3D
+CollisionShape3D
+AnimationPlayer
+Camera3D
+DirectionalLight3D
+StaticBody3D

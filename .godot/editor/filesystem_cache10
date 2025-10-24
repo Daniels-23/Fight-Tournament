@@ -1,0 +1,41 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1761329695
+icon.svg::CompressedTexture2D/CompressedTexture2D::1444944228528064178::1757212092::1759463685::1::::<><><>0<>0<>258de4c0bccf65bbf86952b03631cc17<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex::
+readme.md::TextFile::-1::1761328712::0::1::::<><><>0<>0<><>::
+::res://assets/::1760815698
+::res://assets/audio/::1760815661
+::res://assets/materials/::1760815673
+::res://assets/props/::1760815681
+::res://assets/texture/::1760815692
+::res://assets/ui/::1760815698
+::res://globals/::1760815859
+::res://globals/settings/::1760815859
+::res://scenes/::1760815962
+floor.tscn::PackedScene/PackedScene::3892538447595222049::1760503183::0::1::::<><><>0<>0<><>::uid://ut7axrihe1o5::::res://icon.svg
+state_machine.tscn::PackedScene/PackedScene::7344288294198242378::1760481623::0::1::::<><><>0<>0<><>::uid://ckoll6twrips4::::res://scripts/todo lo de la statemachine/state_machine.gd
+::res://scenes/entities/::1761327334
+area_de_deteccion.tscn::PackedScene::6143386212527871650::1760816159::0::1::::<><><>0<>0<><>::uid://d0g5n2iecxv77::::res://scripts/entities_and_others/area_de_deteccion.gd
+fighter.tscn::PackedScene::274372687742323140::1761327334::0::1::::<><><>0<>0<><>::uid://dvc3m8j4x8llv::::res://scripts/states/fighter.gd<>uid://dcvvmcupgikt3::::res://scenes/state_machine.tscn<>uid://ut7axrihe1o5::::res://icon.svg<>uid://cv1wt0n31u0qk::::res://scripts/states/idle.gd<>uid://1y2ix4add24f::::res://scripts/states/run.gd<>uid://bkcq23sirdp63::::res://scripts/states/jump.gd<>uid://hpampvur16bb::::res://scripts/states/fall.gd<>uid://2tarskvc48s0::::res://scripts/states/diagonal_jump.gd<>uid://cxip34r5hddw4::::res://scripts/states/attack.gd<>uid://c5w460mbjjadq::::res://scripts/states/airattack.gd
+::res://scenes/levels/::1760815948
+stage_01.tscn::PackedScene::8441520214390171023::1760815948::0::1::::<><><>0<>0<><>::uid://bvptslxqs8tk0::::res://scenes/floor.tscn<>uid://d5544cc636fo::::res://scenes/entities/fighter.tscn<>uid://ctr5w5n0yfr0e::::res://scenes/entities/area_de_deteccion.tscn
+::res://scenes/menu/::1760815792
+::res://scenes/ui/::1760815807
+::res://scripts/::1760816159
+::res://scripts/entities_and_others/::1760816159
+area_de_deteccion.gd::GDScript::8928215564332461964::1760486785::0::1::::<>CharacterBody3D<><>0<>0<><>::
+::res://scripts/guardado de datos/::1759808416
+new_resource.tres::Resource/Resource::7668181939132850368::1759788856::0::1::::<><><>0<>0<><>::
+::res://scripts/states/::1761327332
+airattack.gd::GDScript/GDScript::6925740471196990830::1760496474::0::1::::<>PlayerState<><>0<>0<><>::
+attack.gd::GDScript/GDScript::6404662101025627677::1760492859::0::1::::<>PlayerState<><>0<>0<><>::
+damaged.gd::GDScript/GDScript::122658845813017617::1760493919::0::1::::<>Node<><>0<>0<><>::
+diagonal_jump.gd::GDScript/GDScript::1934353275876735273::1760496203::0::1::::<>PlayerState<><>0<>0<><>::
+fall.gd::GDScript::522309822527610943::1761327332::0::1::::<>PlayerState<><>0<>0<><>::
+fighter.gd::GDScript::8639079776833890191::1761327331::0::1::::Player<>CharacterBody3D<><>0<>0<><>::
+idle.gd::GDScript::6301851943789454734::1761326437::0::1::::FighterIdleState<>PlayerState<><>0<>0<><>::
+jump.gd::GDScript::3093459062747861022::1761326496::0::1::::<>PlayerState<><>0<>0<><>::
+run.gd::GDScript::1876109898682750803::1760816130::0::1::::<>PlayerState<><>0<>0<><>::
+::res://scripts/todo lo de la statemachine/::1760503183
+fighter_state.gd::GDScript/GDScript::4323512518359687743::1760493919::0::1::::PlayerState<>State<><>0<>0<><>::
+state.gd::GDScript/GDScript::5088028655542572978::1759461590::0::1::::State<>Node<><>0<>0<><>::
+state_machine.gd::GDScript/GDScript::5504320281574515597::1760503183::0::1::::StateMachine<>Node<><>0<>0<><>::
