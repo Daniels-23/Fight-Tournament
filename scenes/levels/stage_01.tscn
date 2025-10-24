@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsjeus6tnr1bn"]
+
+[ext_resource type="PackedScene" uid="uid://bvptslxqs8tk0" path="res://scenes/floor.tscn" id="1_0jxai"]
+[ext_resource type="PackedScene" uid="uid://d5544cc636fo" path="res://scenes/entities/fighter.tscn" id="2_o6pbe"]
+[ext_resource type="PackedScene" uid="uid://ctr5w5n0yfr0e" path="res://scenes/entities/area_de_deteccion.tscn" id="3_hnttr"]
+
+[node name="Stage01" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_0jxai")]
+
+[node name="Floor2" parent="." instance=ExtResource("1_0jxai")]
+transform = Transform3D(10, 0, 0, 0, -0.0284485, -9.99996, 0, 9.99996, -0.0284485, 0, 19.469, -18.7663)
+
+[node name="Fighter" parent="." instance=ExtResource("2_o6pbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.085, 6.67126, 0.230029)
+
+[node name="Fighter2" parent="." instance=ExtResource("2_o6pbe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54647, 6.67126, 0.230029)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.943999, 20.155)
+
+[node name="Camera3D" type="Camera3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, 0.998981, -0.0451365, 0, 0.0451365, 0.998981, 0.0320184, 2.48932, -5.69468)
+
+[node name="AreaDeDeteccion" parent="." instance=ExtResource("3_hnttr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66734, 1.2082, 1.07455)

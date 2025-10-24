@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvptslxqs8tk0"]
+
+[ext_resource type="Texture2D" uid="uid://ut7axrihe1o5" path="res://icon.svg" id="1_ukw5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kuqtn"]
+albedo_texture = ExtResource("1_ukw5w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c41w6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ukw5w"]
+
+[node name="Floor" type="Node3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kuqtn")
+mesh = SubResource("PlaneMesh_c41w6")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1.47497, 0)
+shape = SubResource("BoxShape3D_ukw5w")
+debug_color = Color(0, 0.665725, 0.138273, 0.42)

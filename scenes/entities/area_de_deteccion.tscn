@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctr5w5n0yfr0e"]
+
+[ext_resource type="Script" uid="uid://d0g5n2iecxv77" path="res://scripts/entities_and_others/area_de_deteccion.gd" id="1_lkevh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4g87"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lkevh"]
+
+[node name="AreaDeDeteccion" type="CharacterBody3D"]
+script = ExtResource("1_lkevh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_x4g87")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("BoxMesh_lkevh")

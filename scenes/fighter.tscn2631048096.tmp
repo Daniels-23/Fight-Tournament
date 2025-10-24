@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://d5544cc636fo"]
+
+[ext_resource type="Script" uid="uid://dvc3m8j4x8llv" path="res://scripts/fighter.gd" id="1_a4q2m"]
+[ext_resource type="PackedScene" uid="uid://dcvvmcupgikt3" path="res://scenes/state_machine.tscn" id="2_1q4ya"]
+[ext_resource type="Script" uid="uid://cv1wt0n31u0qk" path="res://scripts/idle.gd" id="3_38ety"]
+[ext_resource type="Script" uid="uid://1y2ix4add24f" path="res://scripts/run.gd" id="3_eelhu"]
+[ext_resource type="Script" uid="uid://bkcq23sirdp63" path="res://scripts/jump.gd" id="5_1bj3w"]
+[ext_resource type="Script" uid="uid://hpampvur16bb" path="res://scripts/fall.gd" id="6_ql5yn"]
+[ext_resource type="Script" uid="uid://2tarskvc48s0" path="res://scripts/diagonal_jump.gd" id="7_1bj3w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yyin7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a4q2m"]
+
+[sub_resource type="Animation" id="Animation_1q4ya"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.708854, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_38ety"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsphg"]
+_data = {
+&"Idle": SubResource("Animation_1q4ya"),
+&"RESET": SubResource("Animation_38ety")
+}
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("animation") groups=["FighterGroup"]]
+script = ExtResource("1_a4q2m")
+animation = NodePath("Animation")
+
+[node name="Hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_yyin7")
+debug_color = Color(1, 0.188584, 0.301862, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hitbox"]
+transform = Transform3D(0.833333, 0, 0, 0, 0.833333, 0, 0, 0, 0.833333, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_a4q2m")
+skeleton = NodePath("../..")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rsphg")
+}
+
+[node name="State_machine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_1q4ya")]
+initial_state = NodePath("Idle")
+
+[node name="Running" type="Node3D" parent="State_machine"]
+script = ExtResource("3_eelhu")
+
+[node name="Idle" type="Node3D" parent="State_machine"]
+script = ExtResource("3_38ety")
+
+[node name="Jumping" type="Node3D" parent="State_machine"]
+script = ExtResource("5_1bj3w")
+
+[node name="Falling" type="Node3D" parent="State_machine"]
+script = ExtResource("6_ql5yn")
+
+[node name="DiagonalJump" type="Node3D" parent="State_machine"]
+script = ExtResource("7_1bj3w")
